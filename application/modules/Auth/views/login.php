@@ -40,8 +40,8 @@
                   </form>
                   <hr>
                   <div class="link-auth">
-                    <a class="small" href="<?php echo base_url(); ?>Auth/LupaPassword">Lupa Password?</a>
-                    <br>
+                    <!-- <a class="small" href="<?php echo base_url(); ?>Auth/LupaPassword">Lupa Password?</a>
+                    <br> -->
                     <a class="small" href="<?php echo base_url(); ?>Auth/Register">Belum Punya Akun? Register!</a>
                   </div>
                 </div>

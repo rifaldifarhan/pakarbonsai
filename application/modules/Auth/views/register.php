@@ -63,8 +63,8 @@
                   <hr>
 
                   <div class="link-auth">
-                    <a class="small" href="<?php echo base_url(); ?>Auth/LupaPassword">Lupa Password?</a>
-                    <br>
+                    <!-- <a class="small" href="<?php echo base_url(); ?>Auth/LupaPassword">Lupa Password?</a>
+                    <br> -->
                     <a class=" small" href="<?php echo base_url(); ?>Auth/Login">Sudah Punya Akun? Login!</a>
                   </div>
                 </div>

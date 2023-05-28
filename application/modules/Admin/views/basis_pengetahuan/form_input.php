@@ -1,11 +1,11 @@
-<?php echo form_open_multipart('Admin/BasisPengetahuan/update'); ?>
+<?php echo form_open_multipart('Admin/BasisPengetahuan/insert'); ?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Edit Basis Pengetahuan</h1>
+        <h1 class="h3 mb-0 text-gray-800">Tambah Gejala</h1>
     </div>
 
     <div class="col-lg-6">
@@ -18,14 +18,14 @@
             <div class="card border-left-primary shadow mb-4">
                 <div class="card-body w-100">
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="id">ID</label>
-                        <input class="form-control" type="text" name="id" id="id" placeholder="" value="<?php echo $record_pengetahuan->id ?>" readonly />
-                    </div>
+                        <input class="form-control" type="text" name="id" id="id" placeholder="" required />
+                    </div> -->
 
                     <div class="form-group">
                         <label for="nama_penyakit">Nama Gejala</label>
-                        <input class="form-control" type="text" name="nama_penyakit" id="nama_penyakit" value="<?php echo $record_pengetahuan->nama_penyakit ?>" required />
+                        <input class="form-control" type="text" name="nama_penyakit" id="nama_penyakit" required />
                     </div>
 
                     <!-- <div class="form-group">
@@ -39,15 +39,15 @@
 
                     <div class="form-group">
                         <label for="pengertian">Pengertian</label>
-                        <textarea class="form-control" name="pengertian" id="pengertian"><?php echo $record_pengetahuan->pengertian ?></textarea>
+                        <textarea class="form-control" name="pengertian" id="pengertian" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="penanggulangan">Penanggulangan</label>
-                        <textarea class="form-control" name="penanggulangan" id="penanggulangan"><?php echo $record_pengetahuan->penanggulangan ?></textarea>
+                        <textarea class="form-control" name="penanggulangan" id="penanggulangan" required></textarea>
                     </div>
 
-                    <input class="btn btn-success" type="submit" name="btn" value="update" />
+                    <input class="btn btn-success" type="submit" name="btn" value="Tambah" />
 
                     </form>
 

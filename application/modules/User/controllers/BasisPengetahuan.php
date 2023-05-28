@@ -8,16 +8,20 @@ class BasisPengetahuan extends CI_Controller
   {
     parent::__construct();
 
-    // if ($this->session->userdata('status') != "login") {
-    //   redirect(base_url("Auth/Login"));
-    // }
+    $this->load->model("M_basispengetahuan");
+
+    if (!isset($_SESSION['username'])) {
+      redirect(base_url('Auth/Login'));
+    }
   }
 
   public function index()
   {
     $data = array(
+      'list_pengetahuan' => $this->M_basispengetahuan->getAll()->result(),
       'content' => 'User/basis_pengetahuan.php'
     );
+    // echo json_encode($data);
     $this->load->view('template_user/template_user', $data);
   }
 }
