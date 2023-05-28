@@ -12,7 +12,7 @@
           Sistem ini bekerja dengan pengetahuan dan metode analisa yang telah didefinisikan terlebih dahulu oleh pakar yang sesuai
           dengan bidang keahliannya.
         </p>
-        <a class="button-home btn btn-xl text-white" href="<?php echo base_url(); ?>User/Diagnosis">Mulai Diagnosis!</a>
+        <a class="button-home btn btn-xl text-white" href="<?php echo base_url(); ?>User/Konsultasi">Mulai Konsultasi!</a>
       </div>
     </div>
   </div>

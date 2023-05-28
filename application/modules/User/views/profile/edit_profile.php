@@ -21,7 +21,7 @@
                                         <div class="card border-left-info">
                                             <div class="card-body">
                                                 <div class="d-flex flex-column align-items-center text-center">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="110">
                                                     <div class="mt-3">
                                                         <h4><?php echo $user['nama'] ?></h4>
                                                         <p class="text-secondary font-weight-bold mb-1">User Pakar Bonsai</p>
@@ -66,7 +66,7 @@
                                                         <h6 class="mb-0">Telepon/No. HP</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="number" class="form-control" id="telepon" name="telepon" value="<?php echo $user['telepon'] ?>">
+                                                        <input type="text" class="form-control" id="telepon" name="telepon" value="<?php echo $user['telepon'] ?>">
                                                         <?php echo form_error('telepon', '<small class="text-danger pl-3">', '</small>'); ?>
                                                     </div>
                                                 </div>

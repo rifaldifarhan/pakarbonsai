@@ -1,9 +1,11 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Aturan Sistem Pakar Bonsai</h1>
-    <!-- <a href="<?php echo base_url('Admin/Gejala/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-2 text-gray-800">Aturan Sistem Pakar Bonsai</h1>
+        <!-- <a href="<?php echo base_url('Admin/Gejala/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
       <i class="fas fa-plus fa-sm text-white-50"></i> Tambah</a> -->
+    </div>
 
     <?php echo $this->session->flashdata('message'); ?>
 
@@ -11,31 +13,35 @@
     <div class="card border-left-primary shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
                     <thead class="bg-success text-white">
                         <tr>
-                            <th>No</th>
-                            <th>ID Rule</th>
-                            <th>ID Gejala</th>
-                            <th>ID Penyakit</th>
-                            <th>Skor</th>
-                            <th>Opsi</th>
+                            <th rowspan="2">No</th>
+                            <th rowspan="2">ID Gejala</th>
+                            <th colspan="<?php echo sizeof($penyakit) ?>" class="text-center">Penyakit</th>
+                            <!-- <th rowspan="2">Opsi</th> -->
+                        </tr>
+                        <tr>
+                            <?php foreach ($penyakit as $val_penyakit) : ?>
+                                <th><?php echo $val_penyakit->nama_penyakit ?></th>
+                            <?php endforeach; ?>
                         </tr>
                     </thead>
-                    <?php $no = 1;
-                    foreach ($list_aturan as $data) : ?>
-                        <tr>
-                            <td><?php echo $no++ ?></td>
-                            <td><?php echo $data->idskor_gejala ?></td>
-                            <td><?php echo $data->gejala_idgejala ?></td>
-                            <td><?php echo $data->penyakit_idpenyakit ?></td>
-                            <td><?php echo $data->skor ?></td>
-                            <td>
-                                <a href=<?php echo base_url('Admin/Aturan/edit/' . $data->idskor_gejala) ?> class="btn btn-warning btn-sm">Edit</a>
-                                <!-- <a href=<?php echo base_url('Admin/Aturan/delete/' . $data->idskor_gejala) ?> class="btn btn-danger btn-sm">Hapus</a> -->
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
+                    <tbody>
+                        <?php $no = 1;
+                        foreach ($gejala as $val_gejala) : ?>
+                            <tr>
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $val_gejala->nama_gejala ?></td>
+                                <?php foreach ($penyakit as $val_penyakit) : ?>
+                                    <td><?php echo $this->M_aturan->get_Skor($val_gejala->id_gejala, $val_penyakit->id_penyakit) ?></td>
+                                <?php endforeach; ?>
+                                <!-- <td>
+                                    <a href=<?php echo base_url('Admin/Aturan/edit/') ?> class="btn btn-warning btn-sm">Edit</a>
+                                    <a href=<?php echo base_url('Admin/Aturan/delete/') ?> class="btn btn-danger btn-sm">Hapus</a>
+                                </td> -->
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

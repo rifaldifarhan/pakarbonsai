@@ -28,11 +28,6 @@
             <input class="form-control" type="text" name="nama_penyakit" id="nama_penyakit" placeholder="" value="<?php echo $record_penyakit->nama_penyakit ?>" required />
           </div>
 
-          <div class="form-group">
-            <label for="bobot_penyakit">Bobot Penyakit </label>
-            <input class="form-control" type="text" name="bobot_penyakit" id="bobot_penyakit" placeholder="" value="<?php echo $record_penyakit->bobot_penyakit ?>" required />
-          </div>
-
           <!-- <div class="form-group">
                 <label for="name">Photo</label>
                 <input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" />

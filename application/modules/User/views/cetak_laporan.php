@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+
+<head>
     <title>Cetak Diagnosa</title>
-</head><body>
+</head>
+
+<body>
 
     <h3>COBA PRINT</h3>
 
-</body></html>
+</body>
+
+</html>

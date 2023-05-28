@@ -1,9 +1,11 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Data Hama Penyakit</h1>
-  <!-- <a href="<?php echo base_url('Admin/Gejala/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
-      <i class="fas fa-plus fa-sm text-white-50"></i> Tambah</a> -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-2 text-gray-800">Data Penyakit</h1>
+    <a href="<?php echo base_url('Admin/Penyakit/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
+      <i class="fas fa-plus fa-sm text-white-50"></i> Tambah</a>
+  </div>
 
   <?php echo $this->session->flashdata('message'); ?>
 
@@ -17,7 +19,6 @@
               <th>No</th>
               <th>ID Penyakit</th>
               <th>Nama Penyakit</th>
-              <th>Bobot</th>
               <th>Pengendalian</th>
               <th>Opsi</th>
             </tr>
@@ -28,7 +29,6 @@
               <td><?php echo $no++ ?></td>
               <td><?php echo $data->id_penyakit ?></td>
               <td><?php echo $data->nama_penyakit ?></td>
-              <td><?php echo $data->bobot_penyakit ?></td>
               <td><?php echo $data->pengendalian ?></td>
               <td>
                 <a href=<?php echo base_url('Admin/Penyakit/edit/' . $data->id_penyakit) ?> class="btn btn-warning btn-sm">Edit</a>

@@ -30,13 +30,11 @@ class Gejala extends CI_Controller
 
   public function insert()
   {
-    $id = $this->input->post('id_gejala');
-
     $insert = array(
-      'id_gejala'   => $id,
-      'nama_gejala' => $this->input->post('nama_gejala'),
+      'id_gejala'   => $this->input->post('id_gejala'),
+      'nama_gejala' => $this->input->post('nama_gejala')
     );
-    // print_r($insert, $id);
+    // print_r($insert);
     if ($this->M_gejala->insert($insert)) {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menambah Data Gejala! </div>');
       redirect(base_url('Admin/Gejala'));
@@ -60,12 +58,12 @@ class Gejala extends CI_Controller
   {
     $id_gejala = $this->input->post('id_gejala');
 
-    $data = array(
+    $update = array(
       'nama_gejala' => $this->input->post('nama_gejala')
     );
 
     $this->db->where('id_gejala', $id_gejala);
-    if ($this->db->update('gejala', $data)) {
+    if ($this->db->update('gejala', $update)) {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Mengubah Data Gejala! </div>');
       redirect(base_url('Admin/Gejala'));
     } else {
@@ -76,7 +74,7 @@ class Gejala extends CI_Controller
 
   public function delete($id)
   {
-    $this->M_gejala->delete($id);
+    $this->db->where('id_gejala', $id);
     if ($this->db->delete('gejala')) {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menghapus Data Gejala! </div>');
       redirect(base_url('Admin/Gejala'));

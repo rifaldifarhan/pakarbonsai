@@ -16,7 +16,7 @@
                         <tr>
                             <th>No</th>
                             <th>ID</th>
-                            <th>Images</th>
+                            <th>Nama Penyakit</th>
                             <th>Pengertian</th>
                             <th>Penanggulangan</th>
                             <th>Opsi</th>
@@ -27,8 +27,8 @@
                         <!-- <?php echo json_encode($data); ?> -->
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $data->id ?></td>
-                            <td><?php echo $data->Image ?></td>
+                            <td><?php echo $data->nama ?></td>
+                            <td><?php echo $data->image ?></td>
                             <td><?php echo $data->pengertian ?></td>
                             <td><?php echo $data->penanggulangan ?></td>
                             <td>

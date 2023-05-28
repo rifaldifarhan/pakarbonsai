@@ -21,12 +21,13 @@ class RiwayatKonsultasi extends CI_Controller
 
   public function delete($id)
   {
-    if ($this->M_gejala->delete($id)) {
+    $this->db->where('id_riwayat', $id);
+    if ($this->db->delete('riwayat_konsultasi')) {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menghapus Riwayat! </div>');
-      redirect(base_url('User/Riwayat'));
+      redirect(base_url('Admin/RiwayatKonsultasi'));
     } else {
       $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gagal Menghapus Riwayat! </div>');
-      redirect(base_url('User Riwayat'));
+      redirect(base_url('Admin/RiwayatKonsultasi'));
     }
   }
 }

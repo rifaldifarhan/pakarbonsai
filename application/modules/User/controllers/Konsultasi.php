@@ -9,6 +9,7 @@ class Konsultasi extends CI_Controller
     parent::__construct();
 
     $this->load->model("M_gejala");
+    $this->load->model("M_penyakit");
     $this->load->model("M_Diagnosis");
     $this->load->model("M_cetak");
 
@@ -51,13 +52,15 @@ class Konsultasi extends CI_Controller
         }
       }
 
-      //Rumus total gejala dipilih / total penyakit
+      //Rumus total gejala dipilih / total penyakit (convert dalam bentuk %)
       if ($skor_gejaladipilih > 0 && $skor_penyakit > 0) {
         $hasil_hitung = $skor_gejaladipilih / $skor_penyakit;
       }
+      // input pada data riwayat konsultasi
       $temp = array(
         "id_penyakit"   => $value->id_penyakit,
         "nama"          => $value->nama_penyakit,
+        "pengendalian"  => $value->pengendalian,
         "skor_penyakit" => $skor_penyakit,
         "skor_gejaladipilih" => $skor_gejaladipilih,
         "hasil_hitung"  => $hasil_hitung
@@ -82,6 +85,7 @@ class Konsultasi extends CI_Controller
       'content' => 'User/hasil_diagnosis.php',
       'hasil'   => $hasil_penyakit
     );
+    // echo json_encode($data['hasil']);
     $this->load->view('template_user/template_user', $data);
   }
 

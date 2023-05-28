@@ -13,7 +13,8 @@ class Aturan extends CI_Controller
     public function index()
     {
         $data = array(
-            'list_aturan'   => $this->M_aturan->getAll()->result(),
+            "penyakit"      => $this->M_aturan->list_penyakit()->result(),
+            "gejala"        => $this->M_aturan->list_gejala()->result(),
             'content'       => 'Admin/aturan/index',
         );
         $this->load->view('template_admin/template_admin', $data);
@@ -74,8 +75,8 @@ class Aturan extends CI_Controller
 
     public function delete($id)
     {
-        $this->M_aturan->delete($id);
-        if ($this->db->delete('gejala')) {
+        $this->db->where('idskor_gejala', $id);
+        if ($this->db->delete('skor_gejala')) {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menghapus Data Aturan! </div>');
             redirect(base_url('Admin/Aturan'));
         } else {

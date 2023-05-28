@@ -41,7 +41,7 @@
                 </div>
                 <div class="row text-isi">
                   <!-- <h6 class="text-gray-700"><?= $hasil[0]["id_penyakit"] ?></h6> -->
-                  <h6 class="text-gray-700">Tanaman anda di diagnosa <span class="nama-penyakit"><?= $hasil[0]["nama"] ?></span></h6>
+                  <h6 class="text-gray-700">Tanaman anda di diagnosa Penyakit <span class="nama-penyakit"><?= $hasil[0]["nama"] ?></span></h6>
                   <!-- <h6 class="text-gray-700"><?= $hasil[0]["hasil_hitung"] ?></h6> -->
                 </div>
                 <hr>
@@ -50,8 +50,7 @@
                   <h5 class="text-gray-900">Pengendalian</h5>
                 </div>
                 <div class="text-isi">
-                  <h6 class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+                  <h6 class="text-gray-700"><?= $hasil[0]["pengendalian"] ?></h6>
                 </div>
 
                 <hr>

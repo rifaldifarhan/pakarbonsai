@@ -15,8 +15,9 @@ class M_riwayat extends CI_Model
         return $this->db->get()->num_rows();
     }
 
-    public function getAll() 
+    public function getAll()
     {
+        $this->db->order_by("id_riwayat", "desc");
         return $this->db->get('riwayat_konsultasi');
     }
 

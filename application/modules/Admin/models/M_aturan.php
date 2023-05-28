@@ -50,4 +50,30 @@ class M_aturan extends CI_Model
         $this->db->from('skor_gejala');
         return $this->db->get()->num_rows();
     }
+
+    public function get_by_gejala()
+    {
+        $this->db->select('gejala.id_gejala,gejala.nama_gejala');
+        $this->db->join('gejala', 'skor_gejala.idskor_gejala = gejala.id_gejala');
+        $this->db->from('skor_gejala');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function list_gejala()
+    {
+        return $this->db->get("gejala");
+    }
+
+    public function list_penyakit()
+    {
+        return $this->db->get("penyakit");
+    }
+
+    public function get_Skor($idgejala, $idpenyakit)
+    {
+        $this->db->where("gejala_idgejala", "$idgejala");
+        $this->db->where("penyakit_idpenyakit", "$idpenyakit");
+        return $this->db->get("skor_gejala")->row_array()['skor'];
+    }
 }

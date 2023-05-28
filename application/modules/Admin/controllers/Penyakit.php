@@ -29,6 +29,23 @@ class Penyakit extends CI_Controller
     $this->load->view('template_admin/template_admin', $data);
   }
 
+  public function insert()
+  {
+    $insert = array(
+      'id_penyakit'   => $this->input->post('id_penyakit'),
+      'nama_penyakit' => $this->input->post('nama_penyakit'),
+      'pengendalian'  => $this->input->post('pengendalian')
+    );
+    // print_r($insert);
+    if ($this->M_penyakit->insert($insert)) {
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menambah Data Penyakit! </div>');
+      redirect(base_url('Admin/Penyakit'));
+    } else {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gagal Menambah Data Penyakit! </div>');
+      redirect(base_url('Admin/Penyakit/edit'));
+    }
+  }
+
   public function edit($id)
   {
     $data = array(
@@ -45,7 +62,6 @@ class Penyakit extends CI_Controller
 
     $data = array(
       'nama_penyakit' => $this->input->post('nama_penyakit'),
-      'bobot_penyakit'  => $this->input->post('bobot_penyakit'),
       'pengendalian'  => $this->input->post('pengendalian')
     );
 
@@ -61,7 +77,7 @@ class Penyakit extends CI_Controller
 
   public function delete($id)
   {
-    $this->M_penyakit->delete($id);
+    $this->db->where('id_penyakit', $id);
     if ($this->db->delete('penyakit')) {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Menghapus Data Penyakit! </div>');
       redirect(base_url('Admin/Penyakit'));

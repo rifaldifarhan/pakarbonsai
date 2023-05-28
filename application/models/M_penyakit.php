@@ -20,6 +20,11 @@ class M_penyakit extends CI_Model
 		$query = $this->db->get();
 	}
 
+	function insert($data)
+	{
+		return $this->db->insert('penyakit', $data);
+	}
+
 	public function edit($data, $id)
 	{
 		$this->db->where('id_penyakit', $id);

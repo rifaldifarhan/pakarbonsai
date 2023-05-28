@@ -36,7 +36,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Admin/Penyakit'); ?>">
           <i class="fas fa-viruses"></i>
-          <span>Data Hama dan Penyakit</span></a>
+          <span>Data Penyakit</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Admin/Aturan'); ?>">
