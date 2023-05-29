@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nama_penyakit">Nama Gejala</label>
+                        <label for="nama_penyakit">Nama Penyakit</label>
                         <input class="form-control" type="text" name="nama_penyakit" id="nama_penyakit" value="<?php echo $record_pengetahuan->nama_penyakit ?>" required />
                     </div>
 

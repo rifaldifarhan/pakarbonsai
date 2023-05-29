@@ -5,7 +5,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Gejala</h1>
+        <h1 class="h3 mb-0 text-gray-800">Tambah Basis Pengetahuan</h1>
     </div>
 
     <div class="col-lg-6">
@@ -24,18 +24,14 @@
                     </div> -->
 
                     <div class="form-group">
-                        <label for="nama_penyakit">Nama Gejala</label>
+                        <label for="nama_penyakit">Nama Penyakit</label>
                         <input class="form-control" type="text" name="nama_penyakit" id="nama_penyakit" required />
                     </div>
 
                     <!-- <div class="form-group">
-                    <label for="name">Photo</label>
-                    <input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" />
-                    <input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
-                    <div class="invalid-feedback">
-                        <?php echo form_error('image') ?>
-                    </div>
-                </div> -->
+                        <label for="name">Photo</label>
+                        <input class="form-control-file" type="file" name="image" />
+                    </div> -->
 
                     <div class="form-group">
                         <label for="pengertian">Pengertian</label>

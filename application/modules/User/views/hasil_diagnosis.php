@@ -50,7 +50,7 @@
                   <h5 class="text-gray-900">Pengendalian</h5>
                 </div>
                 <div class="text-isi">
-                  <h6 class="text-gray-700"><?= $hasil[0]["pengendalian"] ?></h6>
+                  <h6 class="text-gray-700"><?= nl2br(str_replace('', '', htmlspecialchars($hasil[0]["pengendalian"]))) ?></h6>
                 </div>
 
                 <hr>

@@ -37,7 +37,7 @@
                     <h5 class="text-gray-900">Pengendalian</h5>
                   </div>
                   <div class="text-isi">
-                    <h6 class="text-gray-700"><?php echo $value->penanggulangan ?></h6>
+                    <h6 class="text-gray-700"><?php echo nl2br(str_replace('', '', htmlspecialchars($value->penanggulangan))) ?></h6>
                   </div>
 
                   <hr>

@@ -31,7 +31,7 @@
                             <td><?php echo $data->nama_penyakit ?></td>
                             <!-- <td><?php echo $data->image ?></td> -->
                             <td><?php echo $data->pengertian ?></td>
-                            <td><?php echo $data->penanggulangan ?></td>
+                            <td><?php echo nl2br(str_replace('', '', htmlspecialchars($data->penanggulangan))) ?></td>
                             <td>
                                 <div class="">
                                     <a href=<?php echo base_url('Admin/BasisPengetahuan/edit/' . $data->id) ?> class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="edit"><i class="fas fa-pen"></i></a>
