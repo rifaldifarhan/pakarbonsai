@@ -6,7 +6,7 @@
   height: auto;
 }
 
-/* Auth */
+/* ======================================================== Auth ==================================================*/
 .button-auth {
   background: #27583a;
   border-radius: 5px;
@@ -199,5 +199,5 @@ input[type=checkbox]:checked:after {
 
 /* admin profil */
 .card {
-  background-color: ;
+  
 }

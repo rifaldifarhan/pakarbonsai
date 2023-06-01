@@ -53,6 +53,12 @@
                         <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Ulangi Password">
                       </div>
                     </div>
+                    <div class="mb-3 row">
+                      <div class="pl-5">
+                        <input type="checkbox" class="form-check-input" id="show-password">
+                        <label for="show-password" style="font-size: 14px;">Tampilkan Password</label>
+                      </div>
+                    </div>
                     <div class="button-auth">
                       <button type="submit" class="btn btn-user btn-block text-white">
                         Register
@@ -76,3 +82,20 @@
 
     </div>
   </div>
+
+  <script>
+    document.getElementById("show-password").addEventListener("change", function() {
+      var passwordInput = document.getElementById("password1");
+      if (this.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+      var passwordInput = document.getElementById("password2");
+      if (this.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    });
+  </script>

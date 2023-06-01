@@ -27,11 +27,12 @@
                       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                       <?php echo form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
-                    <!-- <div class="mb-3 row">
+                    <div class="mb-3 row">
                       <div class="pl-5">
-                        <input type="checkbox" class="form-check-input" id="show-password"> Tampilkan Password
+                        <input type="checkbox" class="form-check-input" id="show-password">
+                        <label for="show-password" style="font-size: 14px;">Tampilkan Password</label>
                       </div>
-                    </div> -->
+                    </div>
                     <div class="button-auth">
                       <button type="submit" class="btn btn-user btn-block text-white">
                         Login
@@ -53,14 +54,13 @@
     </div>
   </div>
 
-  <!-- <script>
-    $(document).ready(function() {
-      $('#show-password').click(function() {
-        if ($(this).is(':checked')) {
-          $('#Password').attr('type', 'text');
-        } else {
-          $('#Password').attr('type', 'password');
-        }
-      });
+  <script>
+    document.getElementById("show-password").addEventListener("change", function() {
+      var passwordInput = document.getElementById("password");
+      if (this.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
     });
-  </script> -->
+  </script>
