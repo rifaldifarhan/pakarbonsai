@@ -26,4 +26,9 @@ class M_Diagnosis extends CI_Model
         $this->db->where("penyakit_idpenyakit", $idpenyakit);
         return $this->db->get("skor_gejala");
     }
+
+    public function getHasilDiagnosis()
+    {
+        # code...
+    }
 }

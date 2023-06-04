@@ -91,13 +91,12 @@ class Konsultasi extends CI_Controller
 
   public function cetak_laporan()
   {
+    // $this->load->library('Mypdf');
+    // $this->Mypdf->generate('User/cetak_laporan.php');
+
     $this->load->library('dompdf_gen');
 
-    $data = array(
-      'content' => 'User/cetak_laporan.php'
-    );
-    // echo json_encode($data['data']['list_gejala']);
-    $this->load->view('template_user/template_user', $data);
+    $this->load->view('User/cetak_laporan');
 
     $paper_size = 'A4';
     $orientation = 'potrait';
@@ -106,5 +105,13 @@ class Konsultasi extends CI_Controller
     $this->dompdf->load_html($html);
     $this->dompdf->render();
     $this->dompdf->stream("Hasil Diagnosis Penyakit Tanaman Bonsai.pdf", array('Attachment' => 0));
+
+    // $html = $this->load->view('User/cetak_laporan', $data, true);
+
+    // $dompdf = new Dompdf();
+    // $dompdf->loadHtml($html);
+    // $dompdf->setPaper('A4', 'potrait');
+    // $dompdf->render();
+    // $dompdf->stream("Hasil Diagnosis Penyakit Tanaman Bonsai.pdf", array("Attachment" => false));
   }
 }
