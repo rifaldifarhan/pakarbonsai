@@ -19,13 +19,13 @@
                 <div class="card-body w-100">
 
                     <div class="form-group">
-                        <label for="id">ID Gejala </label>
-                        <input class="form-control" type="text" name="id_gejala" id="id_gejala" placeholder="" value="<?php echo $record_aturan->gejala_idgejala ?>" readonly />
+                        <label for="id">Nama Gejala </label>
+                        <input class="form-control" type="text" name="id_gejala" id="id_gejala" placeholder="" value="<?php echo $record_aturan->nama_gejala ?>" readonly />
                     </div>
 
                     <div class="form-group">
-                        <label for="id">ID Penyakit </label>
-                        <input class="form-control" type="text" name="id_penyakit" id="id_penyakit" placeholder="" value="<?php echo $record_aturan->penyakit_idpenyakit ?>" readonly />
+                        <label for="id">Nama Penyakit </label>
+                        <input class="form-control" type="text" name="id_penyakit" id="id_penyakit" placeholder="" value="<?php echo $record_aturan->nama_penyakit ?>" readonly />
                     </div>
 
                     <div class="form-group">

@@ -12,6 +12,9 @@
                 <div class="text-center mb-4">
                   <h3 class="text-gray-900">Pilih Gejala</h3>
                 </div>
+
+                <?php echo $this->session->flashdata('message'); ?>
+
                 <?php echo form_open(base_url('User/Konsultasi/hitung')); ?>
                 <table id="tabel-diagnosis" class="table table-striped">
                   <thead class="thead-table">

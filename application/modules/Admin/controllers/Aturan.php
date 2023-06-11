@@ -57,8 +57,8 @@ class Aturan extends CI_Controller
         $id_skor = $this->input->post('idskor_gejala');
 
         $data = array(
-            // 'id_gejala'     => $this->input->post('gejala_idgejala'),
-            // 'id_penyakit'   => $this->input->post('penyakit_idpenyakit'),
+            'id_gejala'     => $this->input->post('gejala_idgejala'),
+            'id_penyakit'   => $this->input->post('penyakit_idpenyakit'),
             'bobot'         => $this->input->post('skor'),
         );
 

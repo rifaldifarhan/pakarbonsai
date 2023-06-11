@@ -33,6 +33,21 @@ class Konsultasi extends CI_Controller
     $gejala = $this->input->post("gejala");
     $penyakit = $this->db->get("penyakit")->result();
     $hasil_penyakit = array();
+
+    // Jika tidak memilih gejala
+    // if (sizeof($gejala) <= 0) {
+    //   $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Diagosis Tidak Ditemukan! Silahkan Pilih Gejala! </div>');
+    //   redirect("User/Konsultasi");
+    //   die();
+    // }
+
+    // jika semua gejala dipilih
+    if (sizeof($gejala) >= $this->M_gejala->getAll()->num_rows()) {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Diagosis Tidak Ditemukan Karena Anda Memilih Semua Gejala! </div>');
+      redirect("User/Konsultasi");
+      die();
+    }
+
     foreach ($penyakit as $value) {
       $hasil_hitung = 0;
       $skor_gejaladipilih = 0;
@@ -52,7 +67,7 @@ class Konsultasi extends CI_Controller
         }
       }
 
-      //Rumus total gejala dipilih / total penyakit (convert dalam bentuk %)
+      //Rumus total gejala dipilih / total penyakit
       if ($skor_gejaladipilih > 0 && $skor_penyakit > 0) {
         $hasil_hitung = $skor_gejaladipilih / $skor_penyakit;
       }
@@ -89,29 +104,18 @@ class Konsultasi extends CI_Controller
     $this->load->view('template_user/template_user', $data);
   }
 
-  public function cetak_laporan()
-  {
-    // $this->load->library('Mypdf');
-    // $this->Mypdf->generate('User/cetak_laporan.php');
+  // public function cetak_laporan()
+  // {
+  //   $this->load->library('dompdf_gen');
 
-    $this->load->library('dompdf_gen');
+  //   $this->load->view('User/cetak_laporan');
 
-    $this->load->view('User/cetak_laporan');
-
-    $paper_size = 'A4';
-    $orientation = 'potrait';
-    $html = $this->output->get_output();
-    $this->dompdf->set_paper($paper_size, $orientation);
-    $this->dompdf->load_html($html);
-    $this->dompdf->render();
-    $this->dompdf->stream("Hasil Diagnosis Penyakit Tanaman Bonsai.pdf", array('Attachment' => 0));
-
-    // $html = $this->load->view('User/cetak_laporan', $data, true);
-
-    // $dompdf = new Dompdf();
-    // $dompdf->loadHtml($html);
-    // $dompdf->setPaper('A4', 'potrait');
-    // $dompdf->render();
-    // $dompdf->stream("Hasil Diagnosis Penyakit Tanaman Bonsai.pdf", array("Attachment" => false));
-  }
+  //   $paper_size = 'A4';
+  //   $orientation = 'potrait';
+  //   $html = $this->output->get_output();
+  //   $this->dompdf->set_paper($paper_size, $orientation);
+  //   $this->dompdf->load_html($html);
+  //   $this->dompdf->render();
+  //   $this->dompdf->stream("Hasil Diagnosis Penyakit Tanaman Bonsai.pdf", array('Attachment' => 0));
+  // }
 }

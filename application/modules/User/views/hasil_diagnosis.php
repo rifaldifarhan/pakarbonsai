@@ -26,11 +26,17 @@
                         <th>Skor</th>
                       </tr>
                     </thead>
-                    <?php for ($i = 0; $i < sizeof($hasil); $i++) : ?>
+                    <?php
+                    $penyakit = array();
+                    for ($i = 0; $i < sizeof($hasil); $i++) :
+                      if (round($hasil[$i]['hasil_hitung'], 4) == round($hasil[0]['hasil_hitung'], 4)) {
+                        array_push($penyakit, $hasil[$i]['nama']);
+                      }
+                    ?>
                       <tr>
                         <td><?= $hasil[$i]['id_penyakit'] ?></td>
                         <td><?= $hasil[$i]['nama'] ?></td>
-                        <td><?= $hasil[$i]['hasil_hitung'] ?></td>
+                        <td><?= round($hasil[$i]['hasil_hitung'], 4) ?></td>
                       </tr>
                     <?php endfor; ?>
                   </table>
@@ -41,7 +47,13 @@
                 </div>
                 <div class="row text-isi">
                   <!-- <h6 class="text-gray-700"><?= $hasil[0]["id_penyakit"] ?></h6> -->
-                  <h6 class="text-gray-700">Tanaman anda di diagnosa Penyakit <span class="nama-penyakit"><?= $hasil[0]["nama"] ?></span></h6>
+                  <h6 class="text-gray-700">Tanaman anda di diagnosa Penyakit
+                    <?php $no = 1;
+                    foreach ($penyakit as $value) { ?>
+                      <span class="nama-penyakit"><br><?= $no++ . ") " . $value ?></span>
+                    <?php } ?>
+
+                  </h6>
                   <!-- <h6 class="text-gray-700"><?= $hasil[0]["hasil_hitung"] ?></h6> -->
                 </div>
                 <hr>
@@ -68,9 +80,9 @@
                 <br>
                 <?php form_close(); ?>
 
-                <div class="button-diagnosis mb-2">
+                <!-- <div class="button-diagnosis mb-2">
                   <a href="<?php echo base_url('User/Konsultasi/cetak_laporan'); ?>" class="btn btn-warning text-white" target="_blank"><i class="fa-solid fa-print"></i> Cetak</a>
-                </div>
+                </div> -->
 
                 <div class="col-lg-12 text-center">
                   <a href="<?php echo base_url('User/Home'); ?>" class="btn btn-success text-center"><i class="fa-solid fa-check"></i> Selesai</a>

@@ -19,7 +19,7 @@
                             <th rowspan="2">No</th>
                             <th rowspan="2">ID Gejala</th>
                             <th colspan="<?php echo sizeof($penyakit) ?>" class="text-center">Penyakit</th>
-                            <!-- <th rowspan="2">Opsi</th> -->
+                            <th rowspan="2">Opsi</th>
                         </tr>
                         <tr>
                             <?php foreach ($penyakit as $val_penyakit) : ?>
@@ -36,10 +36,9 @@
                                 <?php foreach ($penyakit as $val_penyakit) : ?>
                                     <td><?php echo $this->M_aturan->get_Skor($val_gejala->id_gejala, $val_penyakit->id_penyakit) ?></td>
                                 <?php endforeach; ?>
-                                <!-- <td>
-                                    <a href=<?php echo base_url('Admin/Aturan/edit/') ?> class="btn btn-warning btn-sm">Edit</a>
-                                    <a href=<?php echo base_url('Admin/Aturan/delete/') ?> class="btn btn-danger btn-sm">Hapus</a>
-                                </td> -->
+                                <td>
+                                    <a href=<?php echo base_url('Admin/Aturan/edit/' . $val_gejala->id_gejala) ?> class="btn btn-warning btn-sm">Edit</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
