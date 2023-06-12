@@ -34,16 +34,15 @@ class Konsultasi extends CI_Controller
     $penyakit = $this->db->get("penyakit")->result();
     $hasil_penyakit = array();
 
-    // Jika tidak memilih gejala
-    // if (sizeof($gejala) <= 0) {
-    //   $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Diagosis Tidak Ditemukan! Silahkan Pilih Gejala! </div>');
-    //   redirect("User/Konsultasi");
-    //   die();
-    // }
-
     // jika semua gejala dipilih
     if (sizeof($gejala) >= $this->M_gejala->getAll()->num_rows()) {
       $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Diagosis Tidak Ditemukan Karena Anda Memilih Semua Gejala! </div>');
+      redirect("User/Konsultasi");
+      die();
+    }
+    // Jika tidak memilih gejala
+    elseif (sizeof($gejala) == 0) {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Belum Memilih Gejala, Silahkan Memilih Gejala Terlebih Dahulu! </div>');
       redirect("User/Konsultasi");
       die();
     }

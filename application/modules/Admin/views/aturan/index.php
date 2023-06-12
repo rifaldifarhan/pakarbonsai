@@ -34,7 +34,7 @@
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $val_gejala->nama_gejala ?></td>
                                 <?php foreach ($penyakit as $val_penyakit) : ?>
-                                    <td><?php echo $this->M_aturan->get_Skor($val_gejala->id_gejala, $val_penyakit->id_penyakit) ?></td>
+                                    <td><?php echo @$this->M_aturan->get_Skor($val_gejala->id_gejala, $val_penyakit->id_penyakit) + 0 ?></td>
                                 <?php endforeach; ?>
                                 <td>
                                     <a href=<?php echo base_url('Admin/Aturan/edit/' . $val_gejala->id_gejala) ?> class="btn btn-warning btn-sm">Edit</a>

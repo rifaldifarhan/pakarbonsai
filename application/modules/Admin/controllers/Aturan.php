@@ -45,7 +45,9 @@ class Aturan extends CI_Controller
     public function edit($id)
     {
         $data = array(
-            'record_aturan' => $this->M_aturan->detailEdit($id),
+            'record_aturan'     => $this->M_aturan->detailEdit($id),
+            'list_penyakit'     => $this->M_aturan->list_penyakit()->result(),
+            'idgejala'          => $id,
             'content' => 'Admin/aturan/form_edit.php'
         );
         // echo json_encode($data['record_gejala']);
@@ -54,17 +56,32 @@ class Aturan extends CI_Controller
 
     public function update()
     {
-        $id_skor = $this->input->post('idskor_gejala');
-
-        $data = array(
-            'id_gejala'     => $this->input->post('gejala_idgejala'),
-            'id_penyakit'   => $this->input->post('penyakit_idpenyakit'),
-            'bobot'         => $this->input->post('skor'),
-        );
-
-        // echo json_encode($data);
-        $this->db->where('idskor_gejala', $id_skor);
-        if ($this->db->update('skor_gejala', $data)) {
+        $penyakit = $this->M_aturan->list_penyakit()->result();
+        $idgejala = $this->input->post('idgejala');
+        $status = "1";
+        foreach ($penyakit as $value) {
+            $this->db->where('gejala_idgejala', $idgejala);
+            $this->db->where('penyakit_idpenyakit', $value->id_penyakit);
+            if ($this->db->get("skor_gejala")->num_rows() > 0) {
+                $data = array(
+                    'skor' => $this->input->post('skor_' . $value->id_penyakit),
+                );
+                $this->db->where('gejala_idgejala', $idgejala);
+                $this->db->where('penyakit_idpenyakit', $value->id_penyakit);
+                if (!$this->db->update('skor_gejala', $data)) {
+                    $status = "0";
+                    break;
+                }
+            } else {
+                $insert = array(
+                    'gejala_idgejala'  => $idgejala,
+                    'penyakit_idpenyakit'  => $value->id_penyakit,
+                    'skor' => $this->input->post('skor_' . $value->id_penyakit),
+                );
+                $this->db->insert('skor_gejala', $insert);
+            }
+        }
+        if ($status == "1") {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Mengubah Aturan! </div>');
             redirect(base_url('Admin/Aturan'));
         } else {

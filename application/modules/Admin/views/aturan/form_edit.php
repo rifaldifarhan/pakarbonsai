@@ -16,41 +16,22 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card border-left-primary shadow mb-4">
-                <div class="card-body w-100">
+                <div class="card-body w-100 row">
+                    <input type="hidden" name="idgejala" value="<?= $idgejala ?>">
+                    <?php foreach ($list_penyakit as $value) : ?>
 
-                    <div class="form-group">
-                        <label for="id">Nama Gejala </label>
-                        <input class="form-control" type="text" name="id_gejala" id="id_gejala" placeholder="" value="<?php echo $record_aturan->nama_gejala ?>" readonly />
+                        <!-- <?php echo json_encode($list_penyakit) ?> -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="nama_penyakit">Skor <?php echo $value->nama_penyakit ?></label>
+                                <input class="form-control" type="text" name="skor_<?= $value->id_penyakit ?>" id="skor_<?= $value->id_penyakit ?>" placeholder="" value="<?php echo @$this->M_aturan->get_Skor($idgejala, $value->id_penyakit) + 0 ?>" />
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+                    <div class="col-sm-12">
+                        <input class="btn btn-success" type="submit" name="btn" value="update" />
                     </div>
-
-                    <div class="form-group">
-                        <label for="id">Nama Penyakit </label>
-                        <input class="form-control" type="text" name="id_penyakit" id="id_penyakit" placeholder="" value="<?php echo $record_aturan->nama_penyakit ?>" readonly />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="id">Bobot / Skor (min 0, max 1) </label>
-                        <input class="form-control" type="number" name="bobot" id="bobot" placeholder="" minlength="0" maxlength="1" value="<?php echo $record_aturan->skor ?>" required />
-                    </div>
-
-                    <!-- <div class="form-group">
-                <label for="name">Photo</label>
-                <input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" />
-                <input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
-                <div class="invalid-feedback">
-                    <?php echo form_error('image') ?>
-                </div>
-            </div> -->
-
-                    <!-- <div class="form-group">
-                <label for="name">Description*</label>
-                <textarea class="form-control <?php echo form_error('description') ? 'is-invalid' : '' ?>" name="description" placeholder="Product description..."><?php echo $product->description ?></textarea>
-                <div class="invalid-feedback">
-                    <?php echo form_error('description') ?>
-                </div>
-            </div> -->
-
-                    <input class="btn btn-success" type="submit" name="btn" value="update" />
 
                     </form>
 
