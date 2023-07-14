@@ -1,4 +1,4 @@
-<header class="bg-image" style="background-image: url('<?php echo base_url(); ?>desain/images/bg-3.jpg'); height:100vh;">
+<header class="bg-image" style="background-image: url('<?php echo base_url(); ?>desain/images/bg-3.jpg');">
 
     <div class="container">
         <!-- Outer Row -->

@@ -1,4 +1,4 @@
-<header class="bg-image" style="background-image: url('<?php echo base_url(); ?>desain/images/bg-3.jpg');">
+<header class="bg-image" style="background-image: url('<?php echo base_url(); ?>desain/images/bg-3.jpg'); height: 100vh;">
 
     <div class="container mt-5">
 
@@ -20,7 +20,7 @@
                         <!-- <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span> -->
                         <h5 class="mt-3">Irma Wardati, SP, MP</h5>
                         <h6 class="mt-3 mb-4">NIP : 19691219 200003 2 001</h6>
-                        <span>Dosen Jurusan Produksi Pertanian Prodi Budidaya Tanaman Perkebunan</span>
+                        <span>Dosen Jurusan Produksi Pertanian Prodi Budidaya Tanaman Perkebunan</span><br>
                         <span>Politeknik Negeri Jember</span>
 
                         <div class="px-4 mt-1 mb-3 mt-3">

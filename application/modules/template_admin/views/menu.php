@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-leaf"></i>
         </div>
-        <div class="sidebar-brand-text">Admin Pakar Bonsai</div>
+        <div class="sidebar-brand-text">Admin Pakar Padi</div>
       </a>
 
       <!-- Divider -->

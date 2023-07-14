@@ -32,7 +32,7 @@
               <td><?php echo $data->username ?></td>
               <td><?php echo $data->tgl_diagnosa ?></td>
               <td><?php echo $data->penyakit ?></td>
-              <td><?php echo $data->hasil ?></td>
+              <td><?php echo $data->hasil ?>%</td>
               <td><?php echo $data->pilihan ?></td>
               <td>
                 <a href=<?php echo base_url('Admin/RiwayatKonsultasi/delete/' . $data->id_riwayat) ?> class="btn btn-danger btn-sm">Hapus</a>

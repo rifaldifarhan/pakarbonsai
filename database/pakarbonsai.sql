@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 05:50 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Waktu pembuatan: 14 Jul 2023 pada 18.03
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `basis_pengetahuan`
+-- Struktur dari tabel `basis_pengetahuan`
 --
 
 CREATE TABLE `basis_pengetahuan` (
@@ -35,7 +35,7 @@ CREATE TABLE `basis_pengetahuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `basis_pengetahuan`
+-- Dumping data untuk tabel `basis_pengetahuan`
 --
 
 INSERT INTO `basis_pengetahuan` (`id`, `nama_penyakit`, `pengertian`, `penanggulangan`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `basis_pengetahuan` (`id`, `nama_penyakit`, `pengertian`, `penanggul
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gejala`
+-- Struktur dari tabel `gejala`
 --
 
 CREATE TABLE `gejala` (
@@ -60,7 +60,7 @@ CREATE TABLE `gejala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `gejala`
+-- Dumping data untuk tabel `gejala`
 --
 
 INSERT INTO `gejala` (`id_gejala`, `nama_gejala`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `gejala` (`id_gejala`, `nama_gejala`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penyakit`
+-- Struktur dari tabel `penyakit`
 --
 
 CREATE TABLE `penyakit` (
@@ -97,7 +97,7 @@ CREATE TABLE `penyakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `penyakit`
+-- Dumping data untuk tabel `penyakit`
 --
 
 INSERT INTO `penyakit` (`id_penyakit`, `nama_penyakit`, `pengendalian`) VALUES
@@ -113,7 +113,7 @@ INSERT INTO `penyakit` (`id_penyakit`, `nama_penyakit`, `pengendalian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `riwayat_konsultasi`
+-- Struktur dari tabel `riwayat_konsultasi`
 --
 
 CREATE TABLE `riwayat_konsultasi` (
@@ -126,109 +126,42 @@ CREATE TABLE `riwayat_konsultasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `riwayat_konsultasi`
+-- Dumping data untuk tabel `riwayat_konsultasi`
 --
 
 INSERT INTO `riwayat_konsultasi` (`id_riwayat`, `username`, `tgl_diagnosa`, `penyakit`, `hasil`, `pilihan`) VALUES
-(63, 'rifaldi', '2023-05-25', 'Bercak Daun', 0.457143, '[\"G09\",\"G11\",\"G13\",\"G16\"]'),
-(66, 'aldi', '2023-05-25', 'Kerupuk', 0.444444, '[\"G05\",\"G07\",\"G09\",\"G10\"]'),
-(68, 'rifaldi', '2023-05-25', 'Kanker Batang', 0.347826, '[\"G02\",\"G03\",\"G06\",\"G07\"]'),
-(69, 'wahyu', '2023-05-25', 'Busuk Akar', 0.283784, '[\"G14\",\"G15\",\"G17\",\"G18\"]'),
-(70, 'aldi', '2023-05-28', 'Bercak Daun', 0.571429, '[\"G08\",\"G09\",\"G11\",\"G14\"]'),
-(71, 'aldi', '2023-05-28', 'Busuk Akar', 0.27027, '[\"G15\",\"G17\",\"G18\"]'),
-(72, 'rifaldi', '2023-05-28', 'Bercak Daun', 0.571429, '[\"G08\",\"G09\",\"G11\",\"G13\"]'),
-(73, 'rifaldi', '2023-05-28', 'Bercak Daun', 0.571429, '[\"G08\",\"G09\",\"G11\",\"G13\"]'),
-(74, 'rifaldi', '2023-05-28', 'Bercak Daun', 0.342857, '[\"G09\",\"G12\",\"G13\",\"G14\"]'),
-(75, 'rifaldi', '2023-05-28', 'Karat Daun', 0.457143, '[\"G08\",\"G10\",\"G12\",\"G13\"]'),
-(76, 'rifaldi', '2023-05-28', 'Karat Daun', 0.457143, '[\"G08\",\"G10\",\"G12\",\"G13\"]'),
-(77, 'aldi', '2023-05-30', 'Kerupuk', 0.407407, '[\"G02\",\"G04\",\"G05\"]'),
-(78, 'aldi', '2023-05-30', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(79, 'aldi', '2023-05-30', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(80, 'rifaldi', '2023-06-01', 'Klorosis', 0.529412, '[\"G03\",\"G04\",\"G06\"]'),
-(81, 'aldi', '2023-06-04', 'Busuk Batang', 0.347826, '[\"G06\",\"G08\",\"G11\",\"G14\"]'),
-(82, 'aldi', '2023-06-04', 'Bercak Daun', 0, 'null'),
-(83, 'aldi', '2023-06-04', 'Busuk Batang', 0.347826, '[\"G06\",\"G08\",\"G11\",\"G14\"]'),
-(84, 'rifaldi', '2023-06-04', 'Bercak Daun', 0.428571, '[\"G09\",\"G11\",\"G13\"]'),
-(85, 'aldi', '2023-06-04', 'Busuk Akar', 0.27027, '[\"G14\",\"G16\",\"G17\"]'),
-(86, 'aldi', '2023-06-04', 'Kerupuk', 0.37037, '[\"G05\",\"G07\"]'),
-(87, 'aldi', '2023-06-04', 'Kanker Batang', 0.347826, '[\"G10\",\"G12\",\"G15\"]'),
-(88, 'aldi', '2023-06-04', 'Kanker Batang', 0.347826, '[\"G10\",\"G12\",\"G15\"]'),
-(89, 'aldi', '2023-06-04', 'Karat Daun', 0.428571, '[\"G05\",\"G08\",\"G10\"]'),
-(90, 'aldi', '2023-06-04', 'Karat Daun', 0.428571, '[\"G05\",\"G08\",\"G10\"]'),
-(91, 'aldi', '2023-06-04', 'Karat Daun', 0.428571, '[\"G05\",\"G08\",\"G10\"]'),
-(92, 'aldi', '2023-06-04', 'Karat Daun', 0.428571, '[\"G05\",\"G08\",\"G10\"]'),
-(93, 'aldi', '2023-06-04', 'Karat Daun', 0.428571, '[\"G05\",\"G08\",\"G10\"]'),
-(94, 'aldi', '2023-06-04', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(95, 'rifaldi', '2023-06-05', 'Kerupuk', 0.740741, '[\"G01\",\"G02\"]'),
-(96, 'rifaldi', '2023-06-05', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(97, 'rifaldi', '2023-06-07', 'Busuk Batang', 0.181818, '[\"G13\"]'),
-(98, 'rifaldi', '2023-06-07', 'Bercak Daun', 0, '[\"G14\"]'),
-(99, 'rifaldi', '2023-06-07', 'Bercak Daun', 0, '[\"G05\",\"G06\",\"G07\"]'),
-(100, 'rifaldi', '2023-06-07', 'Bercak Daun', 0, '[\"G05\",\"G09\"]'),
-(101, 'rifaldi', '2023-06-07', 'Busuk Batang', 0.217391, '[\"G14\"]'),
-(102, 'rifaldi', '2023-06-07', 'Busuk Akar', 0.0810811, '[\"G13\"]'),
-(103, 'rifaldi', '2023-06-07', 'Bercak Daun', 1, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\",\"G19\"]'),
-(104, 'rifaldi', '2023-06-07', 'Klorosis', 0.588235, '[\"G04\",\"G06\",\"G08\",\"G13\",\"G15\"]'),
-(105, 'rifaldi', '2023-06-07', 'Bercak Daun', 0.542857, '[\"G08\",\"G09\",\"G11\"]'),
-(106, 'rifaldi', '2023-06-07', 'Kerupuk', 0.333333, '[\"G05\"]'),
-(107, 'rifaldi', '2023-06-07', 'Bercak Daun', 0, 'null'),
-(108, 'rifaldi', '2023-06-07', 'Bercak Daun', 1, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\",\"G19\"]'),
-(109, 'rifaldi', '2023-06-07', 'Bercak Daun', 1, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\",\"G19\"]'),
-(110, 'rifaldi', '2023-06-08', 'Kerupuk', 0.62963, '[\"G03\",\"G05\",\"G07\",\"G09\",\"G11\",\"G12\",\"G13\",\"G15\",\"G16\"]'),
-(111, 'rifaldi', '2023-06-08', 'Kerupuk', 0.62963, '[\"G03\",\"G05\",\"G07\",\"G09\",\"G11\",\"G12\",\"G13\",\"G15\",\"G16\"]'),
-(112, 'rifaldi', '2023-06-08', 'Busuk Daun', 0.3, '[\"G01\"]'),
-(113, 'rifaldi', '2023-06-08', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(114, 'rifaldi', '2023-06-08', 'Kanker Batang', 0.978261, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\"]'),
-(115, 'rifaldi', '2023-06-08', 'Busuk Batang', 0.217391, '[\"G14\"]'),
-(116, 'rifaldi', '2023-06-08', 'Busuk Batang', 0.23913, '[\"G14\",\"G17\"]'),
-(117, 'rifaldi', '2023-06-08', 'Klorosis', 0.617647, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\"]'),
-(118, 'rifaldi', '2023-06-08', 'Karat Daun', 0.457143, '[\"G07\",\"G10\",\"G11\",\"G13\"]'),
-(119, 'rifaldi', '2023-06-09', 'Bercak Daun', 1, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\",\"G19\"]'),
-(120, 'rifaldi', '2023-06-09', 'Klorosis', 0.264706, '[\"G02\",\"G06\"]'),
-(121, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(122, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(123, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(124, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(125, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(126, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(127, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(128, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(129, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(130, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(131, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(132, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(133, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(134, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(135, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(136, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(137, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(138, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(139, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(140, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(141, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(142, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(143, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(144, 'rifaldi', '2023-06-09', 'Kanker Batang', 0.195652, '[\"G02\",\"G03\"]'),
-(145, 'rifaldi', '2023-06-09', 'Bercak Daun', 0.342857, '[\"G03\",\"G06\",\"G09\",\"G10\"]'),
-(146, 'rifaldi', '2023-06-09', 'Busuk Daun', 0.3, '[\"G01\"]'),
-(147, 'rifaldi', '2023-06-09', 'Kerupuk', 0.407407, '[\"G02\",\"G04\",\"G05\"]'),
-(148, 'rifaldi', '2023-06-09', 'Busuk Daun', 0.3, '[\"G01\"]'),
-(149, 'rifaldi', '2023-06-10', 'Bercak Daun', 0.2, '[\"G02\",\"G11\",\"G13\"]'),
-(150, 'rifaldi', '2023-06-10', 'Kanker Batang', 0.369565, '[\"G10\",\"G12\",\"G15\",\"G17\"]'),
-(151, 'rifaldi', '2023-06-10', 'Bercak Daun', 0, 'null'),
-(152, 'rifaldi', '2023-06-10', 'Bercak Daun', 0, 'null'),
-(153, 'rifaldi', '2023-06-10', 'Kerupuk', 0.407407, '[\"G05\",\"G07\",\"G10\"]'),
-(154, 'rifaldi', '2023-06-11', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(155, 'rifaldi', '2023-06-11', 'Klorosis', 0.323529, '[\"G03\",\"G04\",\"G08\"]'),
-(156, 'rifaldi', '2023-06-11', 'Bercak Daun', 0, 'null'),
-(157, 'rifaldi', '2023-06-11', 'Kanker Batang', 0.978261, '[\"G01\",\"G02\",\"G03\",\"G04\",\"G05\",\"G06\",\"G07\",\"G08\",\"G09\",\"G10\",\"G11\",\"G12\",\"G13\",\"G14\",\"G15\",\"G16\",\"G17\",\"G18\"]'),
-(158, 'rifaldi', '2023-06-11', 'Busuk Daun', 0.333333, '[\"G01\",\"G02\"]'),
-(159, 'rifaldi', '2023-06-11', 'Bercak Daun', 0.342857, '[\"G09\",\"G10\",\"G12\",\"G13\"]');
+(181, 'rifaldi', '2023-07-13', 'Kerupuk', 50, '[\"G05\",\"G06\",\"G07\",\"G09\",\"G11\"]'),
+(182, 'rifaldi', '2023-07-13', 'Busuk Daun', 33, '[\"G01\",\"G02\"]'),
+(183, 'rifaldi', '2023-07-13', 'Kanker Batang', 20, '[\"G02\",\"G03\"]'),
+(184, 'rifaldi', '2023-07-13', 'Bercak Daun', 40, '[\"G09\",\"G11\"]'),
+(185, 'rifaldi', '2023-07-13', 'Busuk Akar', 34, '[\"G17\",\"G18\",\"G19\"]'),
+(186, 'rifaldi', '2023-07-13', 'Kerupuk', 36, '[\"G05\"]'),
+(187, 'rifaldi', '2023-07-13', 'Busuk Batang', 24, '[\"G14\",\"G16\"]'),
+(188, 'rifaldi', '2023-07-13', 'Bercak Daun', 43, '[\"G07\",\"G08\",\"G09\"]'),
+(189, 'rifaldi', '2023-07-13', 'Bercak Daun', 29, '[\"G09\",\"G10\"]'),
+(190, 'rifaldi', '2023-07-13', 'Bercak Daun', 29, '[\"G09\",\"G10\"]'),
+(191, 'rifaldi', '2023-07-13', 'Bercak Daun', 40, '[\"G09\",\"G11\"]'),
+(192, 'rifaldi', '2023-07-13', 'Bercak Daun', 20, '[\"G07\",\"G11\",\"G17\"]'),
+(193, 'rifaldi', '2023-07-13', 'Bercak Daun', 31, '[\"G02\",\"G09\",\"G10\"]'),
+(194, 'rifaldi', '2023-07-13', 'Busuk Akar', 23, '[\"G13\",\"G15\",\"G17\"]'),
+(195, 'rifaldi', '2023-07-13', 'Busuk Akar', 23, '[\"G13\",\"G15\",\"G17\"]'),
+(196, 'rifaldi', '2023-07-13', 'Klorosis', 50, '[\"G04\",\"G06\"]'),
+(197, 'rifaldi', '2023-07-13', 'Kanker Batang', 33, '[\"G12\",\"G15\"]'),
+(198, 'rifaldi', '2023-07-13', 'Busuk Akar', 62, '[\"G03\",\"G13\",\"G16\",\"G17\",\"G18\",\"G19\"]'),
+(199, 'rifaldi', '2023-07-13', 'Bercak Daun', 57, '[\"G07\",\"G08\",\"G09\",\"G11\"]'),
+(200, 'rifaldi', '2023-07-13', 'Busuk Daun', 43, '[\"G01\",\"G07\"]'),
+(201, 'rifaldi', '2023-07-13', 'Kerupuk', 36, '[\"G05\"]'),
+(202, 'rifaldi', '2023-07-13', 'Karat Daun', 57, '[\"G07\",\"G08\",\"G10\",\"G11\"]'),
+(203, 'rifaldi', '2023-07-13', 'Busuk Batang', 33, '[\"G14\",\"G19\"]'),
+(204, 'rifaldi', '2023-07-13', 'Busuk Akar', 57, '[\"G02\",\"G03\",\"G13\",\"G16\",\"G17\",\"G19\"]'),
+(205, 'rifaldi', '2023-07-13', 'Kanker Batang', 37, '[\"G02\",\"G03\",\"G15\",\"G19\"]'),
+(206, 'rifaldi', '2023-07-14', 'Kerupuk', 100, '[\"G05\"]'),
+(207, 'rifaldi', '2023-07-14', 'Kerupuk', 100, '[\"G05\"]');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skor_gejala`
+-- Struktur dari tabel `skor_gejala`
 --
 
 CREATE TABLE `skor_gejala` (
@@ -239,7 +172,7 @@ CREATE TABLE `skor_gejala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `skor_gejala`
+-- Dumping data untuk tabel `skor_gejala`
 --
 
 INSERT INTO `skor_gejala` (`idskor_gejala`, `gejala_idgejala`, `penyakit_idpenyakit`, `skor`) VALUES
@@ -304,7 +237,7 @@ INSERT INTO `skor_gejala` (`idskor_gejala`, `gejala_idgejala`, `penyakit_idpenya
 (59, 'G02', 'P04', 0.1),
 (60, 'G03', 'P04', 0.1),
 (61, 'G04', 'P04', 0.1),
-(62, 'G05', 'P04', 0.9),
+(62, 'G05', 'P04', 1),
 (63, 'G06', 'P04', 0.1),
 (64, 'G07', 'P04', 0.1),
 (65, 'G08', 'P04', 0.1),
@@ -399,7 +332,7 @@ INSERT INTO `skor_gejala` (`idskor_gejala`, `gejala_idgejala`, `penyakit_idpenya
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -416,21 +349,22 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `alamat`, `telepon`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (5, 'Administrator', 'admin', 'rifaldifarhan23@gmail.com', 'Jember', '081357595144', '$2y$10$M8Mx4i9.h4EX6/tmFJpYcuIG1jwzvrTofNpKew9PCW7J1fPBy9G9O', 1, 1, 1679649426),
-(6, 'coba nich', 'rifaldi', 'ridhotes@gmail.com', 'Golden Market City', '081357595144', '$2y$10$d7HC1h9477OST6aG3VrFWOZclXoCftpqvSXyyE3f3GbFqZDFcptsC', 2, 1, 1679650372),
+(6, 'testing', 'rifaldi', 'ridhotes@gmail.com', 'Golden Market City', '081357595144', '$2y$10$d7HC1h9477OST6aG3VrFWOZclXoCftpqvSXyyE3f3GbFqZDFcptsC', 2, 1, 1679650372),
 (7, 'dok', '25dok', 'ridhoaw@gmail.com', 'GM city', '89', '$2y$10$yeCi5IQoc8Erzo7b4yTBPuQS0jxjX4XecFxfOsMU1siUkuek8TopO', 2, 1, 1679991354),
 (8, 'rifaldi uhuyy', 'farhan', 'farhanrifaldi24@gmail.com', 'Green Garden', '2147483647', '$2y$10$6pJGjjOADd1NZU638jwmFuQq6UXIXN1S/ZY6PmydB9fLm47FVSPwK', 2, 1, 1681792761),
 (9, 'aldi', 'aldi', 'test@gmail.com', 'Jember', '2147483647', '$2y$10$aUcga4uI/8b2cUVrbVtX7.I9sj1VISKMUZJDrgWqNIAhvzcNS9fOW', 2, 1, 1684160508),
-(10, 'Wahyu Hatim Firmansyah', 'wahyu', 'wahyu@gmail.com', 'Sukowono', '082139845281', '$2y$10$6FUblnIoR3f9jA5X2c0zg.nJCQEPfCYAf1or7WwERLtNxLpmWsQHa', 2, 1, 1685039774);
+(10, 'Wahyu Hatim Firmansyah', 'wahyu', 'wahyu@gmail.com', 'Sukowono', '082139845281', '$2y$10$6FUblnIoR3f9jA5X2c0zg.nJCQEPfCYAf1or7WwERLtNxLpmWsQHa', 2, 1, 1685039774),
+(11, 'M. Ilham Nugraha Syahputra', 'ilham', 'ilham23nugraha@gmail.com', 'Sukowono', '081249435711', '$2y$10$BqEeHPSbxs2SmE7s/XYZwOkoP/k2bNg30u5NlZfniRZhA2YPzyhGG', 2, 1, 1688561292);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -439,7 +373,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id_role`, `role`) VALUES
@@ -451,32 +385,32 @@ INSERT INTO `user_role` (`id_role`, `role`) VALUES
 --
 
 --
--- Indexes for table `basis_pengetahuan`
+-- Indeks untuk tabel `basis_pengetahuan`
 --
 ALTER TABLE `basis_pengetahuan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gejala`
+-- Indeks untuk tabel `gejala`
 --
 ALTER TABLE `gejala`
   ADD PRIMARY KEY (`id_gejala`);
 
 --
--- Indexes for table `penyakit`
+-- Indeks untuk tabel `penyakit`
 --
 ALTER TABLE `penyakit`
   ADD PRIMARY KEY (`id_penyakit`);
 
 --
--- Indexes for table `riwayat_konsultasi`
+-- Indeks untuk tabel `riwayat_konsultasi`
 --
 ALTER TABLE `riwayat_konsultasi`
   ADD PRIMARY KEY (`id_riwayat`),
   ADD KEY `username` (`username`);
 
 --
--- Indexes for table `skor_gejala`
+-- Indeks untuk tabel `skor_gejala`
 --
 ALTER TABLE `skor_gejala`
   ADD PRIMARY KEY (`idskor_gejala`),
@@ -484,65 +418,65 @@ ALTER TABLE `skor_gejala`
   ADD KEY `penyakit_idpenyakit` (`penyakit_idpenyakit`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `role_id` (`role_id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id_role`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `basis_pengetahuan`
+-- AUTO_INCREMENT untuk tabel `basis_pengetahuan`
 --
 ALTER TABLE `basis_pengetahuan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `riwayat_konsultasi`
+-- AUTO_INCREMENT untuk tabel `riwayat_konsultasi`
 --
 ALTER TABLE `riwayat_konsultasi`
-  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
--- AUTO_INCREMENT for table `skor_gejala`
+-- AUTO_INCREMENT untuk tabel `skor_gejala`
 --
 ALTER TABLE `skor_gejala`
-  MODIFY `idskor_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `idskor_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `skor_gejala`
+-- Ketidakleluasaan untuk tabel `skor_gejala`
 --
 ALTER TABLE `skor_gejala`
   ADD CONSTRAINT `skor_gejala_ibfk_1` FOREIGN KEY (`gejala_idgejala`) REFERENCES `gejala` (`id_gejala`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `skor_gejala_ibfk_2` FOREIGN KEY (`penyakit_idpenyakit`) REFERENCES `penyakit` (`id_penyakit`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `user`
+-- Ketidakleluasaan untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `user_role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE;

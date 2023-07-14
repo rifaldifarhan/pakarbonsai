@@ -16,7 +16,6 @@
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fas fa-user-circle"></i> <?php echo $_SESSION['username'] ?></a>
               <ul class="dropdown-menu">
                 <li style="margin-left: 10px;"><a class="dropdown-menu-user" href="<?php echo base_url() ?>User/Profile">Profile</a></li>
-                <!-- <li style="margin-left: 10px;"><a class="dropdown-menu-user" href="<?php echo base_url() ?>User/Riwayat">Riwayat Konsultasi</a></li> -->
                 <li style="margin-left: 10px;"><a class="dropdown-menu-user" href="<?php echo base_url() ?>User/GantiPassword">Ubah Password</a></li>
               </ul>
             </li>

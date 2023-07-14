@@ -36,7 +36,7 @@
                       <tr>
                         <td><?= $hasil[$i]['id_penyakit'] ?></td>
                         <td><?= $hasil[$i]['nama'] ?></td>
-                        <td><?= round($hasil[$i]['hasil_hitung'], 4) ?></td>
+                        <td><?= round($hasil[$i]['hasil_hitung'], 4) ?>%</td>
                       </tr>
                     <?php endfor; ?>
                   </table>
