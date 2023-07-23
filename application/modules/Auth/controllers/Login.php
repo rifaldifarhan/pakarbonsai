@@ -74,9 +74,9 @@ class Login extends CI_Controller
 
   function logout()
   {
-    $this->session->sess_destroy();
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
 			Anda berhasil logout! </div>');
-    redirect(base_url('Auth/Login'));
+    $this->session->sess_destroy();
+    $this->index();
   }
 }

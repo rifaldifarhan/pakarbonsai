@@ -50,6 +50,25 @@
             </div>
           </div>
         </div>
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 text-dark text-center">
+                <h6 class="font-weight-bold">Admin</h6>
+                <h6>Username : Admin</h6>
+                <h6>Password : 123</h6>
+              </div>
+              <div class="col-lg-6 text-dark text-center">
+                <h6 class="font-weight-bold">User</h6>
+                <h6>Username : rifaldi</h6>
+                <h6>Password : asd</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

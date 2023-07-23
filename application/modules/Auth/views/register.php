@@ -41,7 +41,7 @@
                       <?php echo form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="telepon" name="telepon" placeholder="Telepon" value="<?php echo set_value('telepon') ?>">
+                      <input type="tel" class="form-control form-control-user" id="telepon" name="telepon" placeholder="Telepon" pattern="[0-9]+" value="<?php echo set_value('telepon') ?>">
                       <?php echo form_error('telepon', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="form-group row">

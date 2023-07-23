@@ -9,6 +9,16 @@
 <script src="<?php echo base_url() ?>desain/sbadmin/js/sb-admin-2.min.js"></script>
 
 <!-- Bootstrap core JavaScript-->
+<script src="<?php echo base_url() ?>desain/sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>desain/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url() ?>desain/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url() ?>desain/sbadmin/js/sb-admin-2.min.js"></script>
+
+<!-- Bootstrap core JavaScript-->
 <script src="<?php echo base_url() ?>desain/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
@@ -42,11 +52,6 @@
 
 <!-- Page level custom scripts -->
 <script src="<?php echo base_url() ?>desain/sbadmin/js/demo/datatables-demo.js"></script>
-
-<!-- custom -->
-<!-- <script type="text/javascript" src="<?php echo base_url('desain/custom/js/jquery.min.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('desain/custom/DataTable/datatables/datatables.min.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('desain/custom/DataTable/datatables/lib/js/dataTables.bootstrap.min.js') ?>"></script> -->
 
 </body>
 

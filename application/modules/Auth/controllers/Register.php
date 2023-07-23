@@ -25,8 +25,9 @@ class Register extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim', [
 			'required' => 'Alamat belum terisi!'
 		]);
-		$this->form_validation->set_rules('telepon', 'Telepon', 'required|trim', [
-			'required' => 'Telepon belum terisi!'
+		$this->form_validation->set_rules('telepon', 'Telepon', 'required|trim|numeric', [
+			'required'	=> 'Telepon belum terisi!',
+			'numeric'	=> 'Hanya dapat diisi dengan angka!',
 		]);
 		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
 			'required' 		=> 'Password belum terisi!',
